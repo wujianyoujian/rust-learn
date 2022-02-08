@@ -53,3 +53,14 @@ fn another_function1() -> i32 {
 * 默认为不可变引用
 * 不能有多个可变引用
 * 可以有多个不可变引用
+
+```rust
+// 参数为引用类型的字符串, 不会影响所有权
+
+let a = String::from("hello");
+gives_owner_ship(&a);
+
+fn gives_owner_ship(a: &String) -> String {
+    a.to_string()
+}
+```
