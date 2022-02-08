@@ -1,18 +1,27 @@
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
 fn main() {
-    let mut s = String::from("hello");
-    let s1 = &s;
-    print!("{}", s);
-    change(&mut s);
-    println!("{}", s);
-    let slice = &s[0..2];
-    println!("{}", slice);
-}
+    let user1 = User {
+        active: true,
+        username: String::from("112"),
+        email: String::from("112"),
+        sign_in_count: 12,
+    };
 
-// 参数为引用类型的字符串, 不会影响所有权
-fn gives_owner_ship(a: &String) -> String {
-    a.to_string()
-}
+    let user2 = User {
+        active: true,
+        username: String::from("112"),
+        email: String::from("112"),
+        sign_in_count: 12,
+    };
 
-fn change(val: &mut String) -> String {
-    val.to_string()
+    let user = User {
+        email: String::from("an"),
+        ..user2
+    };
 }

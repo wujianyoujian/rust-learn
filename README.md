@@ -64,3 +64,5 @@ fn gives_owner_ship(a: &String) -> String {
     a.to_string()
 }
 ```
+
+## 结构体
